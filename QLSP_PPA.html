@@ -1,0 +1,362 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+        @font-face {
+            font-family: 'Avenir Book';
+            src: url("./fonts/Avenir_Book.ttf");
+        }
+        body {
+            font-family: "Avenir Book", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 960px;
+        }
+        h1, h2 {
+            font-weight: 300;
+        }
+        p {
+            font-weight: 300;
+            line-height: 1.4;
+        }
+        code {
+            font-size: 0.8rem;
+            margin: 0 0.2rem;
+            padding: 0.5rem 0.8rem;
+            white-space: nowrap;
+            background: #efefef;
+            border: 1px solid #d3d3d3;
+            color: #000000;
+            border-radius: 3px;
+        }
+        pre > code {
+            display: block;
+            white-space: pre;
+            line-height: 1.5;
+            padding: 0;
+            margin: 0;
+        }
+        pre.prettyprint > code {
+            border: none;
+        }
+        .disclaimerbox {
+            background-color: #eee;
+            border: 1px solid #eeeeee;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        video.header-vid, img.header-img {
+            height: 140px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        img.rounded {
+            border: 0px solid #eeeeee;
+            border-radius: 10px;
+        }
+        a:link, a:visited {
+            color: #1367a7;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #208799;
+        }
+        td.dl-link {
+            height: 160px;
+            text-align: center;
+            font-size: 22px;
+        }
+        .layered-paper-big {
+            box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35),
+                5px 5px 0 0px #fff,
+                5px 5px 1px 1px rgba(0,0,0,0.35),
+                10px 10px 0 0px #fff,
+                10px 10px 1px 1px rgba(0,0,0,0.35),
+                15px 15px 0 0px #fff,
+                15px 15px 1px 1px rgba(0,0,0,0.35),
+                20px 20px 0 0px #fff,
+                20px 20px 1px 1px rgba(0,0,0,0.35),
+                25px 25px 0 0px #fff,
+                25px 25px 1px 1px rgba(0,0,0,0.35);
+            margin-left: 10px;
+            margin-right: 45px;
+        }
+        .layered-paper {
+            box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35),
+                5px 5px 0 0px #fff,
+                5px 5px 1px 1px rgba(0,0,0,0.35),
+                10px 10px 0 0px #fff,
+                10px 10px 1px 1px rgba(0,0,0,0.35);
+            margin-top: 5px;
+            margin-left: 10px;
+            margin-right: 30px;
+            margin-bottom: 5px;
+        }
+        .vert-cent {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+    </style>
+
+    <title>A Catalyst Framework for the Quantum Linear System Problem via the Proximal Point Algorithm</title>
+    <meta property="og:title" content="A Catalyst Framework for the Quantum Linear System Problem via the Proximal Point Algorithm" />
+    <meta property="og:description" content="Paper description." />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-75863369-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-75863369-6');
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+    <br>
+    <center>
+        <span style="font-size:32px">A Catalyst Framework for the Quantum Linear System Problem via the Proximal Point Algorithm</span><br><br><br>
+    </center>
+
+    <table align="center" width="960px">
+        <tr>
+            <td align="center" width="160px">
+                <center>
+                    <span style="font-size:16px"><a href="https://jlylekim.github.io/">Junhyung Lyle Kim</a><sup>1</sup></span>
+                </center>
+            </td>
+            <td align="center" width="160px">
+                <center>
+                    <span style="font-size:16px"><a href="https://sites.google.com/view/naihuichia">Nai-Hui Chia</a><sup>1</sup></span>
+                </center>
+            </td>
+            <td align="center" width="160px">
+                <center>
+                    <span style="font-size:16px"><a href="https://akyrillidis.github.io">Anastasios Kyrillidis</a><sup>1</sup></span>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <table align="center" width="700px">
+        <tr>            
+            <td align="center" width="350px">
+                <center>
+                    <span style="font-size:16px"><sup>1</sup>Rice University</span>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <table align="center" width="700px">
+        <tr>
+            <td align="center" width="350px">
+                <center>
+                    <br>
+                    <span style="font-size:20px">Code
+                        <a href=""> [GitHub]</a>
+                    </span>
+                </center>
+            </td>
+            <td align="center" width="350px">
+                <center>
+                    <br>
+                    <span style="font-size:20px">
+                        Paper <a href="https://arxiv.org/pdf/2406.13879"> [arXiv]</a>
+                    </span>
+                </center>
+            </td>            
+        </tr>
+    </table>
+
+    <br>
+    <td align="center" width="960px">
+        <center>
+            <td><img class="rounded" style="width:720px" src="./assets/img/QLSP_table.png"/></td>
+        </center>
+    </td>
+
+    <br><hr>
+    <center>
+        <h2>
+            Abstract
+        </h2>
+    </center>
+    <p>
+        Solving systems of linear equations is a cornerstone of computational science but becomes exceedingly challenging as the dimensionality increases. 
+        Quantum algorithms have shown promise in tackling this problem efficiently, offering exponential speedups over classical methods. 
+        However, these quantum advantages are often constrained by the condition number of the matrix in question. 
+        In our recent paper, we propose a novel quantum algorithm inspired by the classical proximal point algorithm (PPA). 
+        This meta-algorithm enhances existing quantum linear system solvers by improving their dependence on the condition number, thereby broadening their applicability to more ill-conditioned problems. 
+        By carefully selecting a parameter \(\eta\), our method effectively preconditions the linear system, mitigating the bottleneck imposed by large condition numbers.
+    </p>
+    
+    <br><hr>
+    <center>
+        <h2>
+            Introduction
+        </h2>
+    </center>
+    <p>
+        Solving systems of linear equations is essential in numerous applications, from scientific computing to machine learning. 
+        Classical algorithms like Gaussian elimination and iterative methods scale poorly with the problem size, often rendering large-scale problems intractable. 
+        Quantum algorithms offer a potential breakthrough by reducing the dependency on problem dimensions from polynomial to logarithmic, as demonstrated by the Harrow-Hassidim-Lloyd (HHL) algorithm. 
+        Despite this, the performance of quantum algorithms is severely impacted by the condition number \(\kappa\) of the matrix, which measures the sensitivity of the system to numerical errors. 
+        High-condition numbers can significantly degrade the efficiency of quantum solutions, a challenge we address in this study.
+    </p>
+    <p>
+        Our approach leverages the classical proximal point algorithm (PPA), a method renowned for improving problem conditioning in optimization tasks. 
+        By adapting PPA to the quantum domain, we introduce a framework that enhances the performance of existing quantum linear system solvers. 
+        The key innovation lies in modifying the matrix to be inverted, thus reducing the effective condition number and improving convergence rates. 
+        This method can be seamlessly integrated with various quantum solvers, providing a versatile tool for tackling a broader class of linear system problems.
+    </p>
+        
+    <br><hr>
+    <center>
+        <h2>
+            The Quantum Linear System Problem (QLSP)
+        </h2>
+    </center>
+    <p>        
+        The Quantum Linear System Problem (QLSP) aims to prepare a quantum state proportional to the solution vector \(x^\star\) of a linear system \(Ax = b\). 
+        This task is central to many quantum algorithms, including those for solving differential equations, machine learning, and optimization problems. 
+        Existing quantum algorithms, such as the HHL algorithm, achieve significant speedups over classical methods by reducing the complexity from polynomial to logarithmic in the problem dimension \(N\). 
+        However, their performance is often limited by the condition number \(\kappa\) of the matrix \(A\).
+    </p>
+    <p>
+        The condition number \(\kappa\) is defined as the ratio of the largest to the smallest singular value of \(A\). 
+        High-condition numbers indicate ill-conditioned systems that are susceptible to numerical errors, which can significantly slow down convergence and reduce accuracy. 
+        Addressing this limitation is crucial for extending the applicability of quantum algorithms to real-world problems, which often involve ill-conditioned matrices.
+    </p>
+    <p>
+       A proper definition of the QLSP problem is as follows:
+    </p>
+            <br>
+                <td align="center" width="960px">
+                    <center>
+                        <td><img class="rounded" style="width:720px" src="./assets/img/QLSP_definition.png"/></td>
+                    </center>
+                </td>        
+
+    <br><hr>
+    <center>
+        <h2>
+            Our Contributions
+        </h2>
+    </center>
+    <p>
+        We present a novel meta-algorithmic framework that enhances the performance of existing quantum linear system solvers. 
+        Our contributions are as follows:
+    </p>
+        <ul>
+            <li><strong>Improved Condition Number:</strong> Our method reduces the effective condition number from \(\kappa\) to \(\frac{\kappa (1+\eta)}{\kappa + \eta}\), where \(\eta\) is a tunable parameter. This reduction alleviates the dependence of the algorithm on the condition number, leading to faster convergence.</li>
+            <li><strong>Flexibility:</strong> The proposed framework is versatile, allowing for different QLSP solvers to be used as subroutines. This flexibility enables users to choose the most appropriate solver for their specific problem.</li>
+            <li><strong>Tunable Parameter \(\eta\):</strong> By carefully selecting the parameter \(\eta\), users can balance the trade-off between runtime and approximation error, optimizing overall algorithmic complexity.</li>
+        </ul>
+    <p>
+        Our approach stands out by directly approximating the solution vector \(x^\star = A^{-1}b\) through iterative refinement. 
+        This is in contrast to existing methods that focus on approximating the inverse of the coefficient matrix \(A\). 
+        By inverting a modified matrix \((I + \eta A)\), our algorithm effectively preconditions the system, resulting in a better-conditioned problem that converges more rapidly.
+    </p>    
+
+    <br><hr>
+    <center>
+        <h2>
+            Algorithmic and Theoretical Intuition
+        </h2>
+    </center>
+    <p>
+        Our proposed algorithm employs the proximal point algorithm (PPA) to iteratively solve the QLSP. 
+        The core idea is to invert the modified matrix \((I + \eta A)\) instead of the original matrix \(A\), thus improving the system's conditioning. 
+        The algorithm proceeds as follows:        
+    </p>      
+        <ul>
+            <li><strong>Initialization:</strong> Start with an initial guess \(x_0\) for the solution vector.</li>
+            <li><strong>Matrix Modification:</strong> Modify the matrix \(A\) to \(I + \eta A\).</li>
+            <li><strong>Iterative Refinement:</strong> Apply any existing QLSP solver to invert the modified matrix and apply to the initial guess.</li>
+        </ul>
+
+    <br>
+                <td align="center" width="960px">
+                    <center>
+                        <td><img class="rounded" style="width:720px" src="./assets/img/QLSP_algorithm.png"/></td>
+                    </center>
+                </td>
+    
+    <p>
+        The convergence rate and error bounds of our algorithm are rigorously analyzed. 
+        By carefully choosing the parameter \(\eta\), the algorithm balances the trade-off between runtime and approximation error. 
+        Our theoretical analysis demonstrates that the proposed method achieves faster convergence and greater accuracy than existing quantum solvers, especially for ill-conditioned problems.
+    </p>  
+    <p>
+        We also provide a detailed complexity analysis, showing that our method significantly reduces the dependence on the condition number \(\kappa\). 
+        Please check our paper for a complete and detailed theoretical analysis.
+    </p>  
+
+     <br><hr>
+    <center>
+        <h2>
+            Empirical observations over theory
+        </h2>
+    </center>
+     <br>
+                <td align="center" width="960px">
+                    <center>
+                        <td><img class="rounded" style="width:360px" src="./assets/img/QLSP_experiment1.png"/></td>
+                    </center>
+                </td>
+    <p>
+        In Figure 1, we show how the query complexity scales as a function of the condition number \(\kappa$\). 
+        The orange line is the state-of-the-art QLSP solver based on the discrete adiabatic theorem. 
+        Simply by “wrapping” the original QLSP solver with our proposed method, the query complexity to achieve a fixed accuracy improves as \(\kappa\) increases.
+    </p>  
+    <br>
+                <td align="center" width="960px">
+                    <center>
+                        <td><img class="rounded" style="width:600px" src="./assets/img/QLSP_experiment2.png"/></td>
+                    </center>
+                </td>
+     <p>
+         In Figure 2, we show, based on our theoretical analysis, the breakdown of the “improvement” and the “overhead” for two different QLSP solvers as subroutines.
+     </p>
+     <br><hr>
+    <center>
+        <h2>
+            Conclusions and future work
+        </h2>
+    </center>
+                
+    <p>
+        Our proposed framework significantly alleviates the dependency on the condition number in solving the Quantum Linear System Problem (QLSP). 
+        By leveraging the proximal point algorithm (PPA), we introduce a meta-algorithm that enhances the performance of existing quantum solvers, broadening their applicability to more challenging, ill-conditioned problems.
+    </p>
+    <p>
+        Future work will explore several promising directions:
+    </p>
+        <ul>
+            <li><strong>Multi-step PPA Implementation:</strong> Extending the algorithm to multi-step PPA implementations could further improve convergence rates and reduce runtime. This involves developing efficient methods for handling multiple iterations of the modified matrix inversion.</li>
+            <li><strong>Warm Starting:</strong> Investigating strategies for better initialization (warm starting) can lead to improved convergence. This may involve using prior knowledge about the solution or leveraging other quantum or classical solvers to provide a good starting point.</li>
+            <li><strong>Hybrid Approaches:</strong> Combining our framework with other optimization techniques, such as quantum-inspired algorithms, could yield even more efficient solvers.</li>
+        </ul>
+        
+    <p>
+        Our work opens new avenues for research in quantum computing and optimization, providing a robust foundation for developing more advanced algorithms that can tackle a wider range of problems.
+    </p>        
+
+    <br><hr>
+    <center>
+        <h1>Acknowledgements</h1>
+        <p>This work is supported by NSF CMMI no. 2037545, NSF CAREER award no. 2145629, Welch Foundation Grant #A22-0307, a Microsoft Research Award, an Amazon Research Award, and a Ken Kennedy Aspiring Cluster Research award (Rice K2I).</p>
+    </center>
+    <br>
