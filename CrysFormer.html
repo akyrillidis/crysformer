@@ -1,0 +1,110 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+/* Styles provided from the given template */
+body {font-family: "Avenir Book", Arial, sans-serif; font-weight: 300; font-size: 16px; margin: auto; width: 960px;}
+h1, h2 {font-weight: 300;}
+p {font-weight: 300; line-height: 1.4;}
+code {font-size: 0.8rem; background: #efefef; padding: 0.5rem 0.8rem; border: 1px solid #d3d3d3; border-radius: 3px;}
+img.rounded {border-radius: 10px;}
+a:link, a:visited {color: #1367a7; text-decoration: none;}
+</style>
+
+<title>CrysFormer: Advancing Protein Structure Prediction via Electron Density Mapping</title>
+<meta property="og:title" content="CrysFormer: Advancing Protein Structure Prediction via Electron Density Mapping" />
+<meta property="og:description" content="Using transformers for protein crystallography." />
+
+<body>
+<br>
+<center>
+    <span style="font-size:32px">CrysFormer: Advancing Protein Structure Prediction via Electron Density Mapping</span><br><br><br>
+</center>
+
+<table align="center" width="960px">
+    <tr>
+        <td align="center"><span style="font-size:16px"><a href="https://github.com">Author 1</a></span></td>
+        <td align="center"><span style="font-size:16px"><a href="https://github.com">Author 2</a></span></td>
+        <td align="center"><span style="font-size:16px"><a href="https://github.com">Author 3</a></span></td>
+    </tr>
+</table>
+
+<table align="center" width="700px">
+    <tr>
+        <td align="center" colspan="2"><span style="font-size:16px">Institution Name</span></td>
+    </tr>
+</table>
+
+<br>
+<table align="center" width="700px">
+    <tr>
+        <td align="center"><span style="font-size:20px">Code <a href="https://github.com/crysformer">[GitHub]</a></span></td>
+        <td align="center"><span style="font-size:20px">Paper <a href="https://arxiv.org/pdf">[arXiv]</a></span></td>
+    </tr>
+</table>
+
+<br>
+<center>
+    <h2>Abstract</h2>
+</center>
+<p>
+Determining protein structures is crucial yet computationally expensive. While models like AlphaFold2 predict structures using sequence data, they often ignore additional crystallographic information. To address this, we propose <code>CrysFormer</code>, a transformer-based model that predicts electron density maps directly from Patterson maps, incorporating partial structure data when available. Our method achieves state-of-the-art accuracy with reduced computational requirements.
+</p>
+
+<br><hr>
+<center>
+    <h2>Introduction</h2>
+</center>
+<p>
+Proteins, composed of amino acids, are essential to cellular functions, and their structure determines their role. Current methods for structure determination—such as X-ray crystallography or machine learning algorithms like AlphaFold2—have limitations. Incorporating additional data, such as crystallographic patterns, can improve accuracy. Here, we present <code>CrysFormer</code>, which utilizes transformers for protein electron density prediction. Our model shows significant improvements over convolution-based methods and sets the stage for solving more complex crystallographic problems.
+</p>
+
+<br><hr>
+<center>
+    <h2>Our Contributions</h2>
+</center>
+<p>
+The key highlights of our study include:
+</p>
+<ul>
+    <li><strong>Novel Architecture:</strong> <code>CrysFormer</code> is the first transformer model tailored for predicting electron density maps from Patterson maps.</li>
+    <li><strong>Utilization of Partial Structures:</strong> The model leverages available amino acid structures for better predictions.</li>
+    <li><strong>Superior Accuracy:</strong> Achieves higher Pearson correlations and lower phase errors compared to convolutional architectures.</li>
+    <li><strong>Efficient Dataset Creation:</strong> Introduces two new datasets—dipeptide (2 residues) and 15-residues—derived from the Protein Data Bank.</li>
+</ul>
+
+<br><hr>
+<center>
+    <h2>Methods</h2>
+</center>
+<p>
+We leverage the Patterson function to preprocess crystallographic data and train a transformer-based model. Unlike convolutional models, <code>CrysFormer</code> employs an attention mechanism to capture global patterns in Patterson maps, integrating partial structure data for enhanced predictions. The model architecture includes efficient 3D patch embeddings and attention mechanisms optimized for 3D grids, ensuring scalability and accuracy.
+</p>
+<img class="rounded" src="https://placeholder.com/crysformer_diagram" alt="CrysFormer Architecture" style="width:720px;">
+
+<br><hr>
+<center>
+    <h2>Experimental Results</h2>
+</center>
+<p>
+<code>CrysFormer</code> was benchmarked against enhanced convolutional networks on our datasets. Key findings include:
+</p>
+<ul>
+    <li><strong>Dipeptide Dataset:</strong> Achieved a Pearson correlation of 0.939 compared to 0.839 for the best convolutional baseline.</li>
+    <li><strong>Efficiency:</strong> Fewer epochs and lower computational costs per epoch.</li>
+    <li><strong>15-Residue Dataset:</strong> Demonstrated scalability and achieved promising accuracy on a more complex dataset.</li>
+</ul>
+<img class="rounded" src="https://placeholder.com/results_chart" alt="Results Chart" style="width:720px;">
+
+<br><hr>
+<center>
+    <h2>Conclusion and Future Work</h2>
+</center>
+<p>
+<code>CrysFormer</code> represents a significant advancement in protein crystallography, combining machine learning with domain-specific insights. Future work will explore variable unit cell geometries and extend the framework to larger protein structures. The method opens new avenues for computational biology, with potential applications in drug discovery and structural biology.
+</p>
+
+<br><hr>
+<center>
+    <h1>Acknowledgements</h1>
+    <p>This research was supported by XYZ funding agencies.</p>
+</center>
