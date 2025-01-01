@@ -10,9 +10,8 @@ Through rigorous research and collaboration, we strive to contribute to the rapi
 
 The results of this project include: 
 
-- [XYZ](./QLSP_PPA.html).
-- [XYZ](./QLSP_PPA.html).
-- [XYZ](./QLSP_PPA.html).
+- [CrysFormer](./CrysFormer.html).
+- [RecCrysFormer](./RecCrysFormer.html).
 
 ### Publications
 
