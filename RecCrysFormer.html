@@ -114,15 +114,36 @@ Our study introduces the following innovations:
     <li><strong>Robustness:</strong> Demonstrates accuracy on synthetic datasets with variable unit cell parameters.</li>
 </ul>
 
-<br><hr>
+<<br><hr>
 <center>
     <h2>Methods</h2>
 </center>
 <p>
-<code>RecCrysFormer</code> processes Patterson maps into electron density maps using a combination of 3D CNNs and transformer layers. The model incorporates partial structure data to improve accuracy and employs a recycling meta-algorithm to refine its predictions iteratively.
+The core of <code>RecCrysFormer</code> is its ability to process raw experimental data in the form of Patterson maps, which capture interatomic vector relationships in protein crystals. These maps, while useful, lack direct information about atomic coordinates. To bridge this gap, <code>RecCrysFormer</code> employs a novel hybrid architecture combining 3D Convolutional Neural Networks (CNNs) and vision transformers.
+</p>
+<p>
+The workflow begins with Patterson maps and, optionally, partial structure electron density maps as inputs. The Patterson maps are divided into small 3D patches, each transformed into feature tokens through convolutional layers and multi-layer perceptrons (MLPs). Positional embeddings are added to retain spatial information, and the resulting tokens are passed through a transformer core. The transformer uses attention mechanisms to capture global dependencies, allowing the model to integrate both Patterson maps and partial structures into coherent electron density predictions.
+</p>
+<p>
+Key innovations include:
+</p>
+<ul>
+    <li><strong>Transformer Attention Mechanism:</strong> A one-way attention system is employed, ensuring that Patterson map tokens can attend to partial structure tokens but not vice versa. This reduces computational complexity while maintaining predictive accuracy.</li>
+    <li><strong>Incorporation of Partial Structures:</strong> Precomputed electron density maps of standardized amino acid conformations are embedded as additional tokens, guiding the model in refining predictions.</li>
+    <li><strong>Recycling Meta-Algorithm:</strong> After an initial training phase, the model’s predictions are passed through a crystallographic refinement process (e.g., SHELXE) to improve electron densities. These refined outputs are then recycled back into training as templates, iteratively improving model accuracy.</li>
+    <li><strong>3D Reconstruction:</strong> After the transformer processes the tokens, a final sequence of 3D convolutional layers translates the token embeddings back into electron density maps, ensuring spatial coherence and alignment with experimental data.</li>
+</ul>
+<p>
+The loss function combines mean squared error (MSE) with the negative Pearson correlation coefficient, a crystallographic metric that captures phase accuracy and structural alignment. This hybrid loss promotes both general and domain-specific optimization, ensuring the model performs well on both global and detailed features.
+</p>
+<p>
+<code>RecCrysFormer</code> also supports partial protein structures, which are derived from well-studied amino acid conformations. These are integrated as a secondary input, enabling the model to refine predictions based on known molecular patterns.
 </p>
 <img class="rounded" src="https://placeholder.com/crysformer_diagram" alt="RecCrysFormer Architecture" style="width:720px;">
-
+<p>
+The final result is a powerful, data-efficient architecture capable of translating experimental Patterson maps into accurate electron density maps. This capability represents a significant step toward bridging the gap between experimental crystallographic methods and machine learning.
+</p>
+    
 <br><hr>
 <center>
     <h2>Results</h2>
