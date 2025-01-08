@@ -125,7 +125,7 @@ The core of <code>RecCrysFormer</code> is its ability to process raw experimenta
 The workflow begins with Patterson maps and, optionally, partial structure electron density maps as inputs. The Patterson maps are divided into small 3D patches, each transformed into feature tokens through convolutional layers and multi-layer perceptrons (MLPs). Positional embeddings are added to retain spatial information, and the resulting tokens are passed through a transformer core. The transformer uses attention mechanisms to capture global dependencies, allowing the model to integrate both Patterson maps and partial structures into coherent electron density predictions.
 </p>
 <center>
-    <img class="rounded" src="./assets/img/Crysformer2.png" alt="CrysFormer Architecture" style="width:720px;">
+    <img class="rounded" src="./assets/img/Crysformer2.png" alt="CrysFormer Architecture" style="width:360px;">
 </center>
 <p>
 Key innovations include:
@@ -143,7 +143,7 @@ The loss function combines mean squared error (MSE) with the negative Pearson co
 <code>RecCrysFormer</code> also supports partial protein structures, which are derived from well-studied amino acid conformations. These are integrated as a secondary input, enabling the model to refine predictions based on known molecular patterns.
 </p>
 <center>
-    <img class="rounded" align="center" src="./assets/img/crysformerArchitecture1.png" alt="CrysFormer Architecture" style="width:720px;">
+    <img class="rounded" align="center" src="./assets/img/crysformerArchitecture1.png" alt="CrysFormer Architecture" style="width:360px;">
 </center>
 <p>
 The final result is a powerful, data-efficient architecture capable of translating experimental Patterson maps into accurate electron density maps. This capability represents a significant step toward bridging the gap between experimental crystallographic methods and machine learning.
@@ -162,7 +162,7 @@ The final result is a powerful, data-efficient architecture capable of translati
     <li><strong>Robustness:</strong> Demonstrated high performance on datasets with variable unit cell dimensions and angles.</li>
 </ul>
 <center>
-    <img class="rounded" align="center" src="./assets/img/frac_comparison.png" alt="CrysFormer Architecture" style="width:720px;">
+    <img class="rounded" align="center" src="./assets/img/frac_comparison.png" alt="CrysFormer Architecture" style="width:600px;">
 </center>
 <center>
     <img class="rounded" align="center" src="./assets/img/recon_reccrysformer.png" alt="CrysFormer Architecture" style="width:720px;">
