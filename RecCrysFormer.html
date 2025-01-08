@@ -1,0 +1,113 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+body {font-family: "Avenir Book", Arial, sans-serif; font-weight: 300; font-size: 16px; margin: auto; width: 960px;}
+h1, h2 {font-weight: 300;}
+p {font-weight: 300; line-height: 1.4;}
+code {font-size: 0.8rem; background: #efefef; padding: 0.5rem 0.8rem; border: 1px solid #d3d3d3; border-radius: 3px;}
+img.rounded {border-radius: 10px;}
+a:link, a:visited {color: #1367a7; text-decoration: none;}
+</style>
+
+<title>RecCrysFormer: Bridging Protein Crystallography and ML</title>
+<meta property="og:title" content="RecCrysFormer: Bridging Protein Crystallography and ML" />
+<meta property="og:description" content="Leveraging Patterson maps and transformers for refined protein structural predictions." />
+
+
+<body>
+<br>
+<center>
+    <span style="font-size:32px">Refined Protein Structural Prediction from 3D Patterson Maps via Recycling Training Runs
+</span><br><br><br>
+</center>
+
+<table align="center" width="960px">
+    <tr>
+        <td align="center"><span style="font-size:16px"><a href="mailto:zhu.3440@osu.edu">Zhihui Zhu</a></span></td>
+        <td align="center"><span style="font-size:16px"><a href="mailto:cyou@google.com">Chong You</a></span></td>
+    </tr>
+</table>
+
+<table align="center" width="700px">
+    <tr>
+        <td align="center" colspan="2"><span style="font-size:16px">Ohio State University & Google Research</span></td>
+    </tr>
+</table>
+
+<br>
+<table align="center" width="700px">
+    <tr>
+        <td align="center"><span style="font-size:20px">Code <a href="https://github.com/RecCrysFormer">[GitHub]</a></span></td>
+        <td align="center"><span style="font-size:20px">Paper <a href="https://arxiv.org/pdf/recCrysFormer">[arXiv]</a></span></td>
+    </tr>
+</table>
+
+<br>
+<center>
+    <h2>Abstract</h2>
+</center>
+<p>
+Determining protein structures is crucial for understanding biological functions. Traditional methods like X-ray crystallography face challenges such as the phase problem. We present <code>RecCrysFormer</code>, a hybrid model that integrates transformers and convolutional layers to predict electron density maps directly from Patterson maps. Incorporating known partial structures and a recycling training regimen, our model achieves high accuracy on synthetic datasets, bridging experimental and computational approaches.
+</p>
+
+<br><hr>
+<center>
+    <h2>Introduction</h2>
+</center>
+<p>
+Proteins, composed of amino acids, play vital roles in biological processes. Understanding their 3D structure is essential for insights into their functionality. While experimental methods like X-ray crystallography are widely used, they face challenges, including the crystallographic phase problem. Machine learning approaches like AlphaFold2 have advanced the field but often neglect the use of raw experimental data like Patterson maps.
+</p>
+<p>
+<code>RecCrysFormer</code> addresses these challenges by combining domain-specific knowledge with machine learning architectures. By leveraging Patterson maps, partial structures, and a novel recycling training regimen, it provides accurate electron density predictions, enabling seamless integration with established crystallographic refinement processes.
+</p>
+
+<br><hr>
+<center>
+    <h2>Key Contributions</h2>
+</center>
+<p>
+Our study introduces the following innovations:
+</p>
+<ul>
+    <li><strong>Integration of Experimental and ML Data:</strong> Uses Patterson maps and standardized partial structures of amino acids.</li>
+    <li><strong>Novel Architecture:</strong> Combines convolutional layers with vision transformers for efficient 3D data processing.</li>
+    <li><strong>Recycling Training:</strong> Incorporates iterative refinement outputs as templates to improve predictions.</li>
+    <li><strong>Robustness:</strong> Demonstrates accuracy on synthetic datasets with variable unit cell parameters.</li>
+</ul>
+
+<br><hr>
+<center>
+    <h2>Methods</h2>
+</center>
+<p>
+<code>RecCrysFormer</code> processes Patterson maps into electron density maps using a combination of 3D CNNs and transformer layers. The model incorporates partial structure data to improve accuracy and employs a recycling meta-algorithm to refine its predictions iteratively.
+</p>
+<img class="rounded" src="https://placeholder.com/crysformer_diagram" alt="RecCrysFormer Architecture" style="width:720px;">
+
+<br><hr>
+<center>
+    <h2>Results</h2>
+</center>
+<p>
+<code>RecCrysFormer</code> was benchmarked on synthetic datasets. Key findings include:
+</p>
+<ul>
+    <li><strong>Accuracy:</strong> Achieved 93% of cases refined to a crystallographic R-factor &lt; 0.38 with SHELXE.</li>
+    <li><strong>Efficiency:</strong> Improved mean Pearson correlations and reduced phase errors across multiple training regimes.</li>
+    <li><strong>Robustness:</strong> Demonstrated high performance on datasets with variable unit cell dimensions and angles.</li>
+</ul>
+<img class="rounded" src="https://placeholder.com/results_chart" alt="Results Chart" style="width:720px;">
+
+<br><hr>
+<center>
+    <h2>Conclusions and Future Work</h2>
+</center>
+<p>
+<code>RecCrysFormer</code> bridges experimental and computational methods, providing a robust framework for protein structure determination. Future work will involve scaling to full-length proteins, handling experimental noise, and extending the recycling procedure for enhanced performance.
+</p>
+
+<br><hr>
+<center>
+    <h1>Acknowledgements</h1>
+    <p>Supported by Ohio State University and Google Research.</p>
+</center>
