@@ -19,4 +19,4 @@ The results of this project include:
 
 > Qiutai Pan, Chen Dun, Shikai Jin, Mitchell D. Miller, Anastasios Kyrillidis, George N. Phillips Jr. [**``CrysFormer: Protein Structure Determination via Patterson Maps, Deep Learning and Partial Structure Attention''**](https://arxiv.org/pdf/2310.03899), Accepted at Structural Dynamics 2024.
 
-> Qiutai Pan, Evan Dramko, Mitchell D. Miller, George N Phillips Jr., Anastasios Kyrillidis, [**``RecCrysFormer: Refined protein structural prediction from 3D Patterson maps via recycling training runs''**](), Submitted to top-ML conference, 2024.
+> Qiutai Pan, Evan Dramko, Mitchell D. Miller, George N Phillips Jr., Anastasios Kyrillidis, [**``RecCrysFormer: Refined protein structural prediction from 3D Patterson maps via recycling training runs''**](), The Second Conference on Parsimony and Learning (CPAL), 2025.
